@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Technical Documentation Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
+</head>
+<body>
+  <nav id="navbar">
+    <header>Git doc</header>
+      <a class="nav-link" href="#SYNOPSIS">SYNOPSIS</a>
+      <a class="nav-link" href="#DESCRIPTION">DESCRIPTION</a>
+      <a class="nav-link" href="#OPTIONS">OPTIONS</a>
+      <a class="nav-link" href="#GIT_COMMANDS">GIT COMMANDS</a>
+      <a class="nav-link" href="#FURTHER_DOCUMENTATION">FURTHER DOCUMENTATION</a>
+      <a class="nav-link" href="#CONFIGURATION_MECHANISM">CONFIGURATION MECHANISM</a>
+  </nav>
+  <main id="main-doc">
+    <section class="main-section" id="SYNOPSIS">
+      <header>SYNOPSIS</header>
+      <code>
+        git [--version] [--help] [-C &lt;path&gt;] [-c &lt;name&gt;=&lt;value&gt;]<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;[--exec-path[=&lt;path&gt;]] [--html-path] [--man-path] [--info-path]<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;[-p|--paginate|-P|--no-pager] [--no-replace-objects] [--bare]<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;[--git-dir=&lt;path&gt;] [--work-tree=&lt;path&gt;] [--namespace=&lt;name&gt;]<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;[--super-prefix=&lt;path&gt;]<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;command&gt; [&lt;args&gt;]
+      </code>
+    </section>
+    <section class="main-section" id="DESCRIPTION">
+      <header>DESCRIPTION</header>
+      <p>Git is a fast, scalable, distributed revision control system with an unusually rich command set that provides both high-level operations and full access to internals.</p>
+      <p>See gittutorial[7] to get started, then see giteveryday[7] for a useful minimum set of commands. The Git User’s Manual has a more in-depth introduction.</p>
+      <p>After you mastered the basic concepts, you can come back to this page to learn what commands Git offers. You can learn more about individual Git commands with "git help command". gitcli[7] manual page gives you an overview of the command-line command syntax.</p>
+      <p>A formatted and hyperlinked copy of the latest Git documentation can be viewed at<br><a href="https://git.github.io/htmldocs/git.html">https://git.github.io/htmldocs/git.html</a></p>
+    </section>
+    <section class="main-section" id="OPTIONS">
+      <header>OPTIONS</header>
+      <ul>
+        <li>
+          <p><strong>--version</strong><br>Prints the Git suite version that the git program came from.</p>
+        </li>
+        <li>
+          <p><strong>--help</strong><br>Prints the synopsis and a list of the most commonly used commands. If the option --all or -a is given then all available commands are printed. If a Git command is named this option will bring up the manual page for that command.</p>
+        </li>
+        <li>
+          <p><strong>-C &lt;path&gt;</strong><br>Run as if git was started in &lt;path&gt; instead of the current working directory. When multiple -C options are given, each subsequent non-absolute -C &lt;path&gt; is interpreted relative to the preceding -C &lt;path&gt;.</p>
+          <code>
+              git --git-dir=a.git --work-tree=b -C c status<br>
+              git --git-dir=c/a.git --work-tree=c/b status
+          </code>
+        </li>
+        <li>
+          <p><strong>--html-path</strong><br>Print the path, without trailing slash, where Git’s HTML documentation is installed and exit.</p>
+        </li>
+        <li>
+          <p><strong>--no-pager</strong><br>Do not pipe Git output into a pager.</p>
+        </li>
+      </ul>
+    </section>
+    <section class="main-section" id="GIT_COMMANDS">
+      <header>GIT COMMANDS</header>
+      <p>We divide Git into high level ("porcelain") commands and low level ("plumbing") commands.</p>
+    </section>
+    <section class="main-section" id="FURTHER_DOCUMENTATION">
+      <header>FURTHER DOCUMENTATION</header>
+      <p>See the references in the "description" section to get started using Git. The following is probably more detail than necessary for a first-time user.</p>
+    </section>
+    <section class="main-section" id="CONFIGURATION_MECHANISM">
+      <header>CONFIGURATION MECHANISM</header>
+      <p>Git uses a simple text format to store customizations that are per repository and are per user. Such a configuration file may look like this:</p>
+      <code>
+          #<br>
+          # A '#' or ';' character indicates a comment.<br>
+          #<br>
+      </code>
+      <code>
+          ; core variables<br>
+          [core]<br>
+          &nbsp;&nbsp;Don't trust file modes<br>
+          &nbsp;&nbsp;filemode = false<br>
+      </code>
+      <code>
+          ; user identity<br>
+          [user]<br>
+          &nbsp;&nbsp;  name = "Junio C Hamano"<br>
+          &nbsp;&nbsp;  email = "gitster@pobox.com"<br>
+      </code>
+    </section>
+  </main>
+</body>
+</html>
